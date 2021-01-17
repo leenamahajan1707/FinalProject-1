@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login </title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Smart Coginitive Medicaid System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+        </li>
+
+        <li ngbDropdown class="nav-item dropdown ">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Register
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu  " aria-labelledby="navbarDropdownMenuLink">
+
+            <a class="dropdown-item" [routerLink]="['/register']" routerLinkActive="router-link-active" >Doctor</a>
+            <a class="dropdown-item" [routerLink]="['/registerp']" routerLinkActive="router-link-active" >Patient</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="row">
+    <div class= "col-md-8 offset-md-md-3 mt-4">
+      <h3>Login</h3>
+      <form #f="ngForm"
+            (ngSubmit)="onSubmit(f)">
+
+          <div class="form-group">
+              <label for="loginUsername">Username</label>
+              <input type="text" name="username" ngModel required #username="ngModel"
+                     name="username"
+                     ngModel
+                     required
+                     #username="ngModel"
+                     class="form-control"
+                     id="loginUsername"
+                     placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label for="loginRole">Role</label>
+            <input type="text" name="role" ngModel required #username="ngModel"
+                   name="role"
+                   ngModel
+                   required
+                   #username="ngModel"
+                   class="form-control"
+                   id="loginRole"
+                   placeholder="Enter Role">
+        </div>
+          <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" name="password" ngModel required #password="ngModel"
+                     name="password"
+                     ngModel
+                     required
+                     #password="ngModel"
+                     class="form-control"
+                     id="loginPassword"
+                     placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+              <a [routerLink]="['/reset-password']">Forgot Password</a>
+          </div>
+          <button type="submit" [disabled]="f.invalid"
+                  [disabled]="f.invalid"
+                  class="btn btn-primary">Login <i class="fas fa-sign-in-alt"></i></button>
+                  <a [routerLink]="['/dashboard1']" routerLinkActive="router-link-active" >login </a>
+      </form>
+      <nav class="navbar navbar-dark bg-dark mt-5 fixed-bottom">
+        <div class="navbar-expand m-auto navbar-text">
+          Medicaid App Developed by Team-28 @CDAC MUMBAI
+        </div>
+      </nav>
+
+  </div>
+</div>
