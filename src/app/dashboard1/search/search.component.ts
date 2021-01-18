@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { History } from '../History';
-import { HistoryService } from '../history.service';
+import { History } from '../../History';
+import { HistoryService } from '../../history.service';
+
 @Component({
-  selector: 'app-dashboard1',
-  templateUrl: './dashboard1.component.html',
-  styleUrls: ['./dashboard1.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class Dashboard1Component implements OnInit {
+export class SearchComponent implements OnInit {
 
   constructor(
     private router: Router,
@@ -23,7 +24,7 @@ export class Dashboard1Component implements OnInit {
   }
 
   history: History = new  History();
-  navToggle: any
+
   public fbFormGroup = this.fb.group({
     pname: ['', Validators.required],
 	  psurname: ['', Validators.required] ,
@@ -46,17 +47,13 @@ export class Dashboard1Component implements OnInit {
     error => console.log(error));
   }
 
-  goToHistory(){
-    this.router.navigate(['/searchHistory']);
-  }
+
 
   selectPatient(pid: number){
+    console.log(pid)
     this.router.navigate(['get-history', pid]);
-  }
-  toggleNav(){
 
   }
-  logout(){
 
-  }
+
 }

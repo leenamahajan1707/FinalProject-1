@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="row">
+    <div class= "col-md-8 offset-md-md-3 mt-4">
+      <div class="container">
+        <div class="card login-card">
+          <div class="row no-gutters">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="brand-wrapper">
+
+                </div>
+                <p class="login-card-description"></p>
+                 <form  (ngSubmit) = "onSubmit()">
+                    <div class="form-group">
+                      <label for="pname">pname</label>
+                      <input type="text" class="form-control" id="pname"  placeholder="patient name"  [(ngModel)] ="history.pname" name ="pname">
+                    </div>
+                    <div class="form-group">
+                      <label for="psurname">psurname</label>
+                      <input type="text" class="form-control" id="psurname"  placeholder="patient surname"  [(ngModel)] ="history.psurname" name ="psurname">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="age">age</label>
+                      <input type="text" class="form-control" id="age"  placeholder="age"  [(ngModel)]="history.age" name ="age" >
+                    </div>
+                    <div clsass="form-group">
+                      <label for="mob_no">mob_no</label>
+                      <input type="text" class="form-control" id="mob_no" placeholder="mob_no"  [(ngModel)]="history.mob_no" name ="mob_no">
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="date_visited">date_visited</label>
+                      <input type="text" class="form-control" id="date_visited"  placeholder="date_visited"  [(ngModel)]="history.date_visited" name ="date_visited" >
+                    </div>
+                    <div class="form-group">
+                      <label for="reason_for_visit">reason_for_visit</label>
+                      <input type="text" class="form-control" id="reason_for_visit" placeholder="reason_for_visit"  [(ngModel)]="history.reason_for_visit" name ="reason_for_visit" >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="symptoms">symptoms</label>
+                      <input type="text" class="form-control" id="symptoms" placeholder="symptoms"  [(ngModel)]="history.symptoms" name ="symptoms">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="medicine_Prescribed">medicine_Prescribed</label>
+                      <input type="text" class="form-control" id="medicine_Prescribed" placeholder="medicine_Prescribed"  [(ngModel)]="history.medicine_Prescribed" name ="medicine_Prescribed" >
+                    </div>
+                    <div class="form-group">
+                      <label for="allergy_if_any">allergy_if_any</label>
+                      <input type="text" class="form-control" id="allergy_if_any" placeholder="allergy_if_any"  [(ngModel)]="history.allergy_if_any" name ="allergy_if_any">
+                    </div>
+                    <div class="form-group">
+                      <label for="is_admitted">is_admitted</label>
+                      <input type="text" class="form-control" id="is_admitted" placeholder="is_admitted"  [(ngModel)]="history.is_admitted" name ="is_admitted">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="date_of_admitted">date_of_admitted</label>
+                      <input type="text" class="form-control" id="date_of_admitted" placeholder="date_of_admitted"  [(ngModel)]="history.date_of_admitted" name ="date_of_admitted">
+                    </div>
+                      <div class="form-group">
+                      <label for="date_of_released">date_of_released</label>
+                      <input type="text" class="form-control" id="date_of_released" placeholder="date_of_released"  [(ngModel)]="history.date_of_released" name ="date_of_released" >
+                    </div>
+                    <div class="form-group">
+                      <label for="test_Done">test_Done</label>
+                      <input type="text" class="form-control" id="test_Done" placeholder="test_Done"  [(ngModel)]="history.test_Done" name ="test_Done">
+                    </div>
+                    <div class="form-group">
+                      <label for="hosp_name">hosp_name</label>
+                      <input type="text" class="form-control" id="hosp_name" placeholder="hosp_name"  [(ngModel)]="history.hosp_name" name ="hosp_name">
+                    </div>
+                      <div class="form-group">
+                      <label for="doctor_Name">doctor_Name</label>
+                      <input type="text" class="form-control" id="doctor_Name" placeholder="doctor_Name"  [(ngModel)]="history.doctor_Name" name ="doctor_Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="doctor_Designation">doctor_Designation</label>
+                      <input type="text" class="form-control" id="doctor_Designation" placeholder="doctor_Designation"  [(ngModel)]="history.doctor_Designation" name ="doctor_Designation" >
+                    </div>
+                    <div class="form-group">
+                      <label for="hosp_address">hosp_address</label>
+                      <input type="text" class="form-control" id="hosp_address" placeholder="hosp_address"  [(ngModel)]="history.hosp_address" name ="hosp_address" >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Data</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
