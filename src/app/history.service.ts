@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { History } from '././History';
+import { Patient } from './patient';
+import { History } from './History';
+
 
 
 @Injectable({
@@ -25,7 +27,7 @@ export class HistoryService {
   //     return res;
   //   });
   // }
-
+  
   // getHistoryList(id : number): Observable<History[]>
   // {
   //   return this.httpClient.get<History[]>(`${this.baseURL}/${id}`);
@@ -43,12 +45,18 @@ export class HistoryService {
     return this.httpClient.get<History>(`${this.baseURL}/${id}`);
   }
 
-  getPatientList(name: String,surname: String ,mob: String): Observable<History>{
-    return this.httpClient.get<History>(`${this.searchURL}/${name}/${surname}/${mob}`);
-  //  console.log(name,surname,mob);
-  //  console.log("http://localhost:8080/api/psearch/doctorsearch/${name}/${surname}/${mob}");
-
+  // getPatientList(name: String,surname: String ,mob: String): Observable<History>{
+  //   return this.httpClient.get<History>(`${this.searchURL}/${name}/${surname}/${mob}`);
+        
+  // }
+  getPatientList(name: String,surname: String ,mob: String): Observable<Patient>{
+    return this.httpClient.get<Patient>(`${this.searchURL}/${name}/${surname}/${mob}`);
+        
   }
 
+  
+  // getHistoryByEmail(ema: number): Observable<History>{
+  //   return this.httpClient.get<History>(`${this.baseURL}/${id}`);
+  // }
 
 }

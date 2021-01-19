@@ -11,55 +11,37 @@ import { HistoryService } from '../../history.service';
 })
 export class HistoryComponent implements OnInit {
 
-  ngOnInit(): void {}
+  p_id: number
+  
+  ngOnInit(): void {
+    this.p_id = this.route.snapshot.params['patient_id'];
+     console.log("PId in history "+this.p_id);
+  }
 
-  // public fbFormGroup = this.fb.group({
-  //   pname: ['', Validators.required],
-	//   age: ['', Validators.required] ,
-	//   mob_no: ['', Validators.required],
-  //   date_visited: ['', Validators.required],
-  //   reason_for_visit : ['', Validators.required],
-  //   symptoms: ['', Validators.required],
-  //   medicine_Prescribed: ['', Validators.required],
-  //   allergy_if_any: ['', Validators.required],
-  //   is_admitted: [''],
-  //   date_of_admitted: [''],
-  //   date_of_released: [''],
-  //   test_Done: ['', Validators.required],
-  //   //private String testReport;
-  //   hosp_name: ['', Validators.required],
-  //   doctor_Name: ['', Validators.required],
-  //   doctor_Designation: ['', Validators.required],
-  //   hosp_address: ['', Validators.required]
-  // });
 
   constructor(
     private router: Router,
     private http: HttpClient,
-    private historyService: HistoryService
+    private historyService: HistoryService,
+    private route: ActivatedRoute
   ) {}
 
-  //  addHistory() {
-  //   const data = this.fbFormGroup.value;
-  //   const url = 'http://localhost:8080/api/v1/history';
-
-  //   this.http.post(url, data).toPromise();
-
-  //   //this.router.navigate(['login']);
-  // }
 
   history: History = new  History();
 
   addHistory(){
+    // this.patient_id = this.route.snapshot.params['patient_id'];
+    // console.log(this.patient_id);
+
     this.historyService.saveHistory(this.history).subscribe( data =>{
       console.log(data);
-      //this.goToHistory();
+      this.goToDoctorView();
     },
     error => console.log(error));
   }
 
-  goToHistory(){
-    this.router.navigate(['/searchHistory']);
+  goToDoctorView(){
+    this.router.navigate(['/dashboard1']);
   }
 
   onSubmit(){
