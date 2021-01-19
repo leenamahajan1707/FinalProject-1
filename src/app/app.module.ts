@@ -12,10 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetHistoryComponent } from './dashboard1/get-history/get-history.component';
 import { HistoryComponent } from './dashboard1/history/history.component';
-import { SearchComponent } from './dashboard1/search/search.component';
+// import { SearchComponent } from './dashboard1/search/search.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AboutComponent } from './about/about.component';
+import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.component';
 
 
 @NgModule({
@@ -26,10 +27,11 @@ import { AboutComponent } from './about/about.component';
     Dashboard2Component,
     GetHistoryComponent,
     HistoryComponent,
-    SearchComponent,
+    // SearchComponent,
     LogoutComponent,
     ErrorPageComponent,
-    AboutComponent
+    AboutComponent,
+    DoctorViewComponent
 
 
   ],

@@ -16,6 +16,7 @@
   </div>
 </nav>
 
+
 <div class="row">
   <div class= "col-md-8 offset-md-md-3 mt-4">
     <div class="container">
@@ -26,7 +27,7 @@
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-
+                            
               </div>
               <p class="login-card-description"></p>
                <!-- <form  (ngSubmit) = "onSubmit()"> -->
@@ -40,8 +41,8 @@
                       <label for="psurname">psurname</label>
                       <input type="text" class="form-control" id="psurname"  placeholder="patient surname"   formControlName="psurname" name ="psurname">
                       </div>
-
-
+                  
+                      
                       <div clsass="form-group">
                       <label for="mob_no">mob_no</label>
                       <input type="text" class="form-control" id="mob_no" placeholder="mob_no"   formControlName="mob_no" name ="mob_no">
@@ -60,23 +61,18 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <tr *ngFor = "let data of history" >
-                              <!-- <td> {{ data.pid }} </td> -->
+                          <tr *ngFor = "let data of patient" >
+                               <td> {{ data.patient_id }} </td> 
                               <td> {{ data.pname }} </td>
                               <td> {{ data.psurname }} </td>
                               <td> {{ data.mob_no }} </td>
                               <td>
-                                  <button (click) = "selectPatient(data.pid)" class = "btn btn-info"> select</button>
-
+                                  <button (click) = "select(data.patient_id)" class = "btn btn-info"> select</button>
+                                  
                               </td>
                           </tr>
                       </tbody>
                   </table>
-                  <nav class="navbar  fixed-top navbar-expand-lg navbar-dark  fixed-bottom" style="background-color: #2082c9;">
-                    <div class="navbar-expand m-auto navbar-text">
-                      Medicaid App Developed by Team-28 @CDAC MUMBAI
-                    </div>
-                  </nav>
 
               <!-- </form> -->
             </div>
@@ -86,4 +82,8 @@
     </div>
   </div>
 </div>
+
+
+
+
 

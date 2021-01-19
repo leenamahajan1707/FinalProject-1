@@ -34,92 +34,94 @@
       <form #f="ngForm"
             (ngSubmit)="onSubmit(f)">
             <div class="form-group">
-              <label for="registerFirstName">First Name</label>
+              <label for="pname">First Name</label>
               <input type="text"
-                     name="text"
+                     name="pname"
                      ngModel
                      required
                      #text="ngModel"
                      class="form-control"
-                     id="registerFirstNamel"
-                     placeholder="First Name">
+                     id="pname"
+                     placeholder="First Name"
+                     [(ngModel)] ="patient.pname">
           </div>
           <div class="form-group">
-            <label for="registerLastName">LastName</label>
+            <label for="psurname">LastName</label>
             <input type="text"
-                   name="text"
+                   name="psurname"
                    ngModel
                    required
                    #email="ngModel"
                    class="form-control"
-                   id="registerLastName"
-                   placeholder="Last Name">
-        </div>
-        <div class="form-group">
-          <label for="registerAge">Age</label>
-          <input type="text"
-                 name="text"
-                 ngModel
-                 required
-                 #email="ngModel"
-                 class="form-control"
-                 id="registerAge"
-                 placeholder="Enter Age">
-      </div>
-      <div class="form-group">
-        <label for="Parent_name">Parent Name</label>
-        <input type="text"
-               name="text"
-               ngModel
-               required
-               #email="ngModel"
-               class="form-control"
-               id="Parent_name"
-               placeholder="Enter Parent Name">
-    </div>
+                   id="psurname"
+                   placeholder="Last Name"
+                   [(ngModel)] ="patient.psurname" >
+          </div>
           <div class="form-group">
-              <label for="Username">Username</label>
+            <label for="age">Age</label>
+            <input type="text"
+                  name="age"
+                  ngModel
+                  required
+                  #email="ngModel"
+                  class="form-control"
+                  id="age"
+                  placeholder="Enter Age"
+                  [(ngModel)] ="patient.age">
+          </div>
+          <div class="form-group">
+            <label for="mob_no">Mobile</label>
+            <input type="text"
+                  name="mob_no"
+                  ngModel
+                  required
+                  #email="ngModel"
+                  class="form-control"
+                  id="mob_no"
+                  placeholder="Enter Mobile No."
+                  [(ngModel)] ="patient.mob_no">
+          </div>
+          <div class="form-group">
+            <label for="parent_name">Parent Name</label>
+            <input type="text"
+                  name="parent_name"
+                  ngModel
+                  required
+                  #email="ngModel"
+                  class="form-control"
+                  id="parent_name"
+                  placeholder="Enter Parent Name"
+                  [(ngModel)] ="patient.parent_name">
+          </div>
+          <div class="form-group">
+              <label for="emailId">Email</label>
               <input type="email"
-                     name="email"
+                     name="emailId"
                      ngModel
                      required
                      #email="ngModel"
                      class="form-control"
-                     id="Usernamel"
-                     placeholder="Enter email">
+                     id="emailId"
+                     placeholder="Enter email"
+                     [(ngModel)] ="patient.emailId">
           </div>
           <div class="form-group">
-            <label for="mobileNo">Username</label>
-            <input type="text"
-                   name="text"
-                   ngModel
-                   required
-                   #email="ngModel"
-                   class="form-control"
-                   id="mobileNo"
-                   placeholder="Enter Mobile No.">
-        </div>
-        <div class="form-group">
-          <label for="loginRole">Role</label>
-          <input type="text" name="role" ngModel required #username="ngModel"
-                 name="role"
-                 ngModel
-                 required
-                 #username="ngModel"
-                 class="form-control"
-                 id="loginRole"
-                 placeholder="Enter Role">
-      </div>
-          <div class="form-group">
-              <label for="registerPassword">Password</label>
+              <label for="password">Password</label>
               <input type="password"
                      name="password"
                      ngModel
                      required
                      #password="ngModel"
                      class="form-control"
-                     id="registerPassword"
-                     placeholder="Password">
+                     id="password"
+                     placeholder="Password"
+                     [(ngModel)] ="patient.password">
+          </div>
+          <div class="form-group">
+            <select class="form-control col-sm-12" name="role" [(ngModel)]="patient.role" required
+              #role="ngModel" [class.is-invalid]="role.invalid && role.touched ">
+              <option>Patient</option>
+            </select>
           </div>
 
           <button type="submit"

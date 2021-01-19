@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { History } from '../History';
 import { HistoryService } from '../history.service';
+import { History } from '../History';
+import { Patient } from '../patient';
+
 @Component({
   selector: 'app-dashboard1',
   templateUrl: './dashboard1.component.html',
@@ -22,8 +24,9 @@ export class Dashboard1Component implements OnInit {
   ngOnInit(): void {
   }
 
-  history: History = new  History();
-  navToggle: any
+  //history: History = new  History();
+  patient: Patient = new Patient();
+
   public fbFormGroup = this.fb.group({
     pname: ['', Validators.required],
 	  psurname: ['', Validators.required] ,
@@ -40,23 +43,30 @@ export class Dashboard1Component implements OnInit {
     console.log(mob);
     this.historyService.getPatientList(name,surname,mob).subscribe( data =>{
       console.log(data);
-      this.history = data;
+      this.patient = data;
       //this.goToHistory();
     },
     error => console.log(error));
   }
 
-  goToHistory(){
-    this.router.navigate(['/searchHistory']);
+  // goToHistory(){
+  //   this.router.navigate(['/searchHistory']);
+  // }
+
+  // selectPatient(pid: number){
+  //   this.router.navigate(['get-history', pid]);
+  // }
+  select(patient_id: number){
+    this.router.navigate(['doctor-view', patient_id]);
   }
 
-  selectPatient(pid: number){
-    this.router.navigate(['get-history', pid]);
-  }
   toggleNav(){
 
   }
   logout(){
 
   }
+  
+  navToggle: any
+ 
 }
