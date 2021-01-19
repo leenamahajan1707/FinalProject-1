@@ -15,6 +15,7 @@ import { HistoryComponent } from './dashboard1/history/history.component';
 import { SearchComponent } from './dashboard1/search/search.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     SearchComponent,
     LogoutComponent,
     ErrorPageComponent,
+    AboutComponent
 
 
   ],
