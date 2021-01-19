@@ -14,6 +14,7 @@ import { GetHistoryComponent } from './dashboard1/get-history/get-history.compon
 import { HistoryComponent } from './dashboard1/history/history.component';
 import { SearchComponent } from './dashboard1/search/search.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { LogoutComponent } from './logout/logout.component';
     HistoryComponent,
     SearchComponent,
     LogoutComponent,
+    ErrorPageComponent,
 
 
   ],
