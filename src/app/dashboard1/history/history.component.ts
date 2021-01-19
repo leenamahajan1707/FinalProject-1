@@ -11,11 +11,12 @@ import { HistoryService } from '../../history.service';
 })
 export class HistoryComponent implements OnInit {
 
+  history: History = new  History();
   p_id: number
   
   ngOnInit(): void {
-    this.p_id = this.route.snapshot.params['patient_id'];
-     console.log("PId in history "+this.p_id);
+    this.history.patient_id = this.route.snapshot.params['patient_id'];
+     console.log("PId in history "+this.history.patient_id);
   }
 
 
@@ -27,7 +28,7 @@ export class HistoryComponent implements OnInit {
   ) {}
 
 
-  history: History = new  History();
+  
 
   addHistory(){
     // this.patient_id = this.route.snapshot.params['patient_id'];

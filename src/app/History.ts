@@ -21,6 +21,6 @@ export class History {
 	doctor_Name : String;
 	doctor_Designation : String;
 	hosp_address : String
-	patient_id: Patient;
+	patient_id: number;
 	
 }
