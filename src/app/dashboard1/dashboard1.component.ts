@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HistoryService } from '../history.service';
 import { History } from '../History';
 import { Patient } from '../patient';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-dashboard1',
@@ -17,7 +18,8 @@ export class Dashboard1Component implements OnInit {
     private router: Router,
     private http: HttpClient,
     private historyService: HistoryService,
-     private fb: FormBuilder
+     private fb: FormBuilder,
+     private authenticationService:AuthenticationService
   ) {}
 
 
@@ -64,7 +66,8 @@ export class Dashboard1Component implements OnInit {
 
   }
   logout(){
-
+    this.authenticationService.logOut();
+    this.router.navigate(['login']);
   }
   
   navToggle: any

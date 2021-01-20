@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { History } from '../../History';
 import { HistoryService } from '../../history.service';
 
@@ -24,7 +25,8 @@ export class HistoryComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     private historyService: HistoryService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authenticationService:AuthenticationService
   ) {}
 
 
@@ -49,6 +51,18 @@ export class HistoryComponent implements OnInit {
     console.log(this.history);
     this.addHistory();
   }
+
+  logout(){
+    this.authenticationService.logOut();
+    this.router.navigate(['login']);
+
+  }
+
+  navToggle(){
+
+  }
+  toggleNav(){}
+
 
 }
 

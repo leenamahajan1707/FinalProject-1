@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouteReuseStrategy } from '@angular/router';
 import { Doctor } from 'src/app/doctor';
 import { Patient } from 'src/app/patient';
 import { RegistrationService } from 'src/app/registration.service';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -15,23 +16,36 @@ export class LoginComponent implements OnInit {
   patient = new Patient();
   msg = '';
   doctor: Doctor = new  Doctor();
-
+// patient:Patient;
+// doctor:Doctor;
   
+constructor(private service: RegistrationService,
+            private _router: Router,
+            private loginservice: AuthenticationService
+  ) { }
 
 
   ngOnInit(): void {
+    if(this.loginservice.isUserLoggedIn)
+    {
+      if(sessionStorage.getItem("patient_id")!=undefined)
+        this._router.navigate(['/dashboard2']); 
+      else if(sessionStorage.getItem("doctor_id")!=undefined)
+        this._router.navigate(['/dashboard1']); 
+      
+    }
   }
 
-  constructor(private service: RegistrationService, private _router: Router) { }
 
   onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
+    console.log("in on submit");
+    console.log(this.patient);  // { first: '', last: '' }
     console.log(f.valid);  // false
 
     if (this.patient.role == "Patient")
     {
 
-      this.PatientLogin();
+      this.PatientLogin(this.patient);
     }
     else if(this.patient.role == "Doctor")
     {
@@ -42,15 +56,20 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  PatientLogin(){
-    console.log("+++++++"+this.patient.role);
-    this.service.loginUserFromRemote(this.patient).subscribe(
+  PatientLogin(patient:Patient){
+
+    console.log("patienlogint");
+    console.log(patient);
+    this.service.loginUserFromRemote(patient).subscribe(
 
       data => {
 
         console.log(this.patient.role);
 
         if (this.patient.role == "Patient") {
+
+          // sessionStorage.setItem('emailId', data.patient.emailId);
+          // sessionStorage.setItem('patient_id', data.patient.patient_id);
 
           this._router.navigate(['/dashboard2']
           );
@@ -69,6 +88,8 @@ export class LoginComponent implements OnInit {
 
   DoctorLogin()
   {
+    console.log("drlogint");
+    console.log(this.doctor);
     console.log("+++++++"+this.doctor.role);
     this.service.loginDoctorFromRemote(this.doctor).subscribe(
 
@@ -77,6 +98,8 @@ export class LoginComponent implements OnInit {
         console.log(this.doctor.role);
 
         if (this.patient.role == "Doctor") {
+          // sessionStorage.setItem('emailId', data.doctor.emailId);
+          // sessionStorage.setItem('doctor_id', data.doctor.id);
 
           this._router.navigate(['/dashboard1']
           );

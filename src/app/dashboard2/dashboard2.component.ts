@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-dashboard2',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class Dashboard2Component implements OnInit {
 
-  constructor(private router: Router, ) { }
+  constructor(private router: Router, 
+              private authenticationService:AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -19,5 +21,17 @@ export class Dashboard2Component implements OnInit {
   {
     this.router.navigate(['get-history',this.patient_id]);
   }
+
+  logout(){
+    this.authenticationService.logOut();
+    this.router.navigate(['login']);
+
+  }
+
+  navToggle(){
+
+  }
+  toggleNav(){}
+
 
 }

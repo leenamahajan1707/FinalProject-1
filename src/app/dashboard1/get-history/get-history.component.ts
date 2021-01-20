@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { History } from '../../History';
 import { HistoryService } from '../../history.service';
 
@@ -45,7 +46,12 @@ export class GetHistoryComponent implements OnInit {
 
   id: number
   history: History
-  constructor(private route: ActivatedRoute, private historyService: HistoryService) { }
+  constructor(private route: ActivatedRoute, 
+              private historyService: HistoryService,
+              private authenticationService:AuthenticationService,
+              private router:Router
+
+            ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['pid'];
@@ -62,8 +68,11 @@ export class GetHistoryComponent implements OnInit {
 
   }
   logout(){
+    this.authenticationService.logOut();
+    this.router.navigate(['login']);
 
   }
+
   
   navToggle: any
 

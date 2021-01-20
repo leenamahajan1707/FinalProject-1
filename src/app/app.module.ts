@@ -18,6 +18,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { AboutComponent } from './about/about.component';
 import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from './service/authentication.service';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
 exports: [RouterModule],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 

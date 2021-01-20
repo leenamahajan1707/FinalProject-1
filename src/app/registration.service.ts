@@ -17,13 +17,13 @@ export class RegistrationService {
 
     var plogin = this.http.post<any>("http://localhost:8080/loginPatient", patient).pipe(map(data => {
       sessionStorage.setItem('patient_id', data.patient_id);
-      sessionStorage.setItem('emailId', data.emailId);
+      sessionStorage.setItem('email', data.emailId);
 
     }
     ));
 
-    console.log(plogin);
-    console.log(patient);
+    console.log("====++++"+plogin);
+    console.log("=====+____"+patient);
     return plogin;
 
   }
@@ -32,7 +32,7 @@ export class RegistrationService {
 
     var dlogin = this.http.post<any>("http://localhost:8080/loginDoctor", doctor).pipe(map(data => {
       sessionStorage.setItem('doctor_id', data.id);
-      sessionStorage.setItem('emailId', data.emailId);
+      sessionStorage.setItem('email', data.emailId);
 
     }
     ));

@@ -12,19 +12,20 @@ import { HistoryComponent } from './dashboard1/history/history.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 // import { SearchComponent } from './dashboard1/search/search.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AuthGaurdService } from './service/auth-gaurd.service';
 
 const routes: Routes = [
   { path: "login",component: LoginComponent},
   { path: "register",component: RegisterComponent},
   { path: "registerp",component: RegisterpComponent},
   { path: "reset-password",component: ResetPasswordComponent},
-  { path: "dashboard1",component:Dashboard1Component},
-  { path: "dashboard2",component:Dashboard2Component},
-  { path: "doctor-view/:patient_id",component:DoctorViewComponent},
-  {path: 'get-history/:pid', component: GetHistoryComponent},
-  {path: 'history/:patient_id', component: HistoryComponent},
-  {path: 'about', component: AboutComponent},
-  { path: "**",component:HomepageComponent},
+  { path: "dashboard1",component:Dashboard1Component,canActivate:[AuthGaurdService]},
+  { path: "dashboard2",component:Dashboard2Component,canActivate:[AuthGaurdService]},
+  { path: "doctor-view/:patient_id",component:DoctorViewComponent,canActivate:[AuthGaurdService]},
+  {path: 'get-history/:pid', component: GetHistoryComponent,canActivate:[AuthGaurdService]},
+  {path: 'history/:patient_id', component: HistoryComponent,canActivate:[AuthGaurdService]},
+  {path: 'about', component: AboutComponent,canActivate:[AuthGaurdService]},
+  { path: "**",component:HomepageComponent,canActivate:[AuthGaurdService]},
 
 
 ];

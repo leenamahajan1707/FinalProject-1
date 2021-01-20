@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HistoryService } from 'src/app/history.service';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-doctor-view',
@@ -16,7 +17,8 @@ export class DoctorViewComponent implements OnInit {
       private router: Router,
       private http: HttpClient,
       private historyService: HistoryService,
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private authenticationService:AuthenticationService
 
   ) { }
 
@@ -34,5 +36,15 @@ export class DoctorViewComponent implements OnInit {
     console.log(this.patient_id);
     this.router.navigate(['get-history', this.patient_id]);
   }
+
+  logout(){
+    this.authenticationService.logOut();
+    this.router.navigate(['login']);
+
+  }
+  navToggle(){
+
+  }
+  toggleNav(){}
 
 }
