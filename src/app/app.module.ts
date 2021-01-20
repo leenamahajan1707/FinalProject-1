@@ -15,6 +15,7 @@ import { HistoryComponent } from './dashboard1/history/history.component';
 // import { SearchComponent } from './dashboard1/search/search.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AboutComponent } from './about/about.component';
 import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.component';
 
 
@@ -29,7 +30,8 @@ import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.compon
     // SearchComponent,
     LogoutComponent,
     ErrorPageComponent,
-    DoctorViewComponent,
+    AboutComponent,
+    DoctorViewComponent
 
 
   ],

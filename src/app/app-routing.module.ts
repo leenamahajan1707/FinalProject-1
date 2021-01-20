@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { RegisterpComponent } from './auth/components/registerp/registerp.component';
@@ -21,8 +22,8 @@ const routes: Routes = [
   { path: "dashboard2",component:Dashboard2Component},
   { path: "doctor-view/:patient_id",component:DoctorViewComponent},
   {path: 'get-history/:pid', component: GetHistoryComponent},
-  // {path: 'searchPatient', component: SearchComponent},
   {path: 'history/:patient_id', component: HistoryComponent},
+  {path: 'about', component: AboutComponent},
   { path: "**",component:HomepageComponent},
 
 
