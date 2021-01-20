@@ -58,6 +58,13 @@ export class GetHistoryComponent implements OnInit {
     });
   }
 
+  toggleNav(){
 
+  }
+  logout(){
+
+  }
+  
+  navToggle: any
 
 }

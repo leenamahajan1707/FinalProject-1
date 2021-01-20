@@ -17,6 +17,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AboutComponent } from './about/about.component';
 import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.compon
     RouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
 exports: [RouterModule],
   providers: [],

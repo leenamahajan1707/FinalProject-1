@@ -1,71 +1,6 @@
 
 
-<!-- <div class="container">
-    <div class="row">
-        <div id="custom-search-input">
-            <div class="input-group col-md-12" style="text-align: center">
-                <div [formGroup]="fbFormGroup" >
-                <input type="text" class="search-query form-control" placeholder="Search With id"  name="id" formControlName="id" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-danger" type="button" (click)="findHistoryById()">
-                            <span class=" glyphicon glyphicon-search"></span>
-                        </button>
-                  </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div>
-<table class = "table table-striped">
-    <thead>
-        <tr>
-            <th>pname </th>
-            <th>age  </th>
-            <th>mob_no  </th>
-            <th>date_visited  </th>
-            <th>reason_for_visit </th>
-            <th>symptoms  </th>
-            <th>medicine_Prescribed </th>
-            <th>allergy_if_any </th>
-            <th>is_admitted </th>
-            <th>date_of_admitted </th>
-            <th>date_of_released  </th>
-            <th> test_Done </th>
-              //private String testReport;
-            <th>hosp_name </th>
-            <th>doctor_Name  </th>
-            <th> doctor_Designation </th>
-            <th>hosp_address  </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let pdata of history" >
-            <td> {{ pdata.pname }} </td>
-            <td> {{ pdata.age }} </td>
-            <td> {{ pdata.mob_no }} </td>
-            <td> {{ pdata.date_visited }} </td>
-            <td> {{ pdata.reason_for_visit }} </td>
-            <td> {{ pdata.symptoms }} </td>
-            <td> {{ pdata.medicine_Prescribed }} </td>
-            <td> {{ pdata.allergy_if_any }} </td>
-            <td> {{ pdata.is_admitted }} </td>
-            <td> {{ pdata.date_of_admitted }} </td>
-            <td> {{ pdata.date_of_released }} </td>
-            <td> {{ pdata.test_Done }} </td>
-            <td> {{ pdata.hosp_name }} </td>
-            <td> {{ pdata.doctor_Name }} </td>
-            <td> {{ pdata.doctor_Designation }} </td>
-            <td> {{ pdata.hosp_address }} </td>
-
-
-        </tr>
-    </tbody>
-</table>
-</div>  -->
-
-<h3> View patient History</h3>
+<!-- <h3> View patient History</h3>
 <div>
     <div>
         <label> <b> First Name : </b></label>  {{ history.pname }}
@@ -119,4 +54,86 @@
         <label> <b> hosp_address : </b></label> {{history.hosp_address}}
     </div>
 
+</div> -->
+
+<nav class="navbar  fixed-top navbar-expand-lg navbar-dark  fixed-top" style="background-color: #2082c9;">
+    <div class="container">
+      <a class="navbar-brand">Smart Coginitive Medicaid System </a>
+      <button (click)="toggleNav()" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive" [ngClass]="{'show': navToggle}">
+          <ul class="navbar-nav ml-auto">
+  
+              <li class="nav-item">
+                  <a href="javascript:void(0)" class="nav-link" (click)="logout()">Logout</a>
+              </li>
+            </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <div class="container p-2 m-7" style="margin-top: 7px;">
+
+      <h2> View patient History</h2>
+      <table style="width:100%">
+        <tr>
+           <th> <b> First Name : </b></th> 
+           <td>{{ history.pname }}</td>
+        </tr>
+        <tr>
+            <th> <b> Last Name : </b></th>
+            <td>{{history.psurname}}</td>
+        </tr>
+        <tr>
+            <th> <b> Age : </b> </th>
+            <td>{{history.age}}</td>
+        </tr>
+      <tr>
+          <th> <b> mobile : </b></th> 
+          <td>{{history.mob_no}}</td>
+     </tr>
+     <tr>
+         <th> <b> Date visited to Hospital : </b></th> 
+         <td>{{history.date_visited}}</td>
+        </tr>
+        <tr>
+            <th> <b> reason for visit : </b></th> 
+            <td>{{history.reason_for_visit}}</td>
+        </tr>
+        <tr>
+            <th> <b> symptoms : </b></th> 
+            <td>{{history.symptoms}}</td>
+        </tr>
+        <tr>
+            <th> <b> medicine_Prescribed : </b></th> 
+            <td>{{history.medicine_Prescribed}}</td>
+      </tr>
+      <tr>
+          <th> <b> allergy_if_any : </b></th>
+          <td>{{history.allergy_if_any}}</td>
+        </tr>
+        <tr>
+            <th> <b> is_admitted : </b></th>
+            <td>{{history.is_admitted}}</td>
+        </tr>
+        <tr>
+            <th> <b> date_of_admitted : </b></th> 
+            <td>{{history.date_of_admitted}}</td>
+        </tr>
+      <tr>
+          <th> <b> date_of_released : </b></th> 
+          <td>{{history.date_of_released}}</td>
+        </tr>
+        <tr>
+            <th> <b> test_Done : </b></th> 
+            <td>{{history.test_Done}}</td>
+        </tr>
+        <tr>
+            <th> <b> hosp_name : </b></th>
+            <td>{{history.hosp_name}}</td>
+        </tr>
+    </table>
+    
 </div>
