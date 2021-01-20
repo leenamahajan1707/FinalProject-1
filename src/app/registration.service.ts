@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { map, tap } from 'rxjs/operators';
+import { Doctor } from './doctor';
 import { Patient } from './patient';
 
 @Injectable({
@@ -14,22 +15,42 @@ export class RegistrationService {
 
   public loginUserFromRemote(patient: Patient): Observable<any> {
 
-    var a = this.http.post<any>("http://localhost:8080/loginPatient", patient).pipe(map(data => {
+    var plogin = this.http.post<any>("http://localhost:8080/loginPatient", patient).pipe(map(data => {
       sessionStorage.setItem('patient_id', data.patient_id);
       sessionStorage.setItem('emailId', data.emailId);
 
     }
     ));
 
-    console.log(a);
+    console.log(plogin);
     console.log(patient);
-    return a;
+    return plogin;
+
+  }
+
+  public loginDoctorFromRemote(doctor: Doctor): Observable<any> {
+
+    var dlogin = this.http.post<any>("http://localhost:8080/loginDoctor", doctor).pipe(map(data => {
+      sessionStorage.setItem('doctor_id', data.id);
+      sessionStorage.setItem('emailId', data.emailId);
+
+    }
+    ));
+
+    console.log(dlogin);
+    console.log(doctor);
+    return dlogin;
 
   }
 
   public RegisterUserFromRemote(patient: Patient): Observable<any> {
 
     return this.http.post<any>("http://localhost:8080/registerPatient", patient)
+  }
+
+  public RegisterDoctorFromRemote(doctor: Doctor): Observable<any> {
+
+    return this.http.post<any>("http://localhost:8080/registerDoctor", doctor)
   }
 
   // private baseurl = "http://localhost:8080/user_list";

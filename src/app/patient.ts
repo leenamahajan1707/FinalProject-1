@@ -1,5 +1,5 @@
 export class Patient {
-
+	
     pname : String;	
     psurname:String;	
 	age:number;

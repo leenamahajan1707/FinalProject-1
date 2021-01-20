@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard2',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Dashboard2Component implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, ) { }
 
   ngOnInit(): void {
+  }
+
+  patient_id = sessionStorage.getItem("patient_id");
+
+  showData()
+  {
+    this.router.navigate(['get-history',this.patient_id]);
   }
 
 }
