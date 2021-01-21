@@ -24,8 +24,8 @@ const routes: Routes = [
   { path: "doctor-view/:patient_id",component:DoctorViewComponent,canActivate:[AuthGaurdService]},
   {path: 'get-history/:pid', component: GetHistoryComponent,canActivate:[AuthGaurdService]},
   {path: 'history/:patient_id', component: HistoryComponent,canActivate:[AuthGaurdService]},
-  {path: 'about', component: AboutComponent,canActivate:[AuthGaurdService]},
-  { path: "**",component:HomepageComponent,canActivate:[AuthGaurdService]},
+  {path: 'about', component: AboutComponent},
+  { path: "**",component:HomepageComponent},
 
 
 ];
