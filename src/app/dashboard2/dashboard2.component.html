@@ -5,10 +5,11 @@
     <button (click)="toggleNav()" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive" [ngClass]="{'show': navToggle}">
+    <div class="collapse navbar-collapse p-3" id="navbarResponsive" [ngClass]="{'show': navToggle}">
         <ul class="navbar-nav ml-auto">
-
+         
             <li class="nav-item">
+             
                 <a href="javascript:void(0)" class="nav-link" (click)="logout()">Logout</a>
             </li>
           </ul>
@@ -16,8 +17,22 @@
   </div>
 </nav>
 
-<div class="container">
+<body>
+  <header>
+      <div class="wrapper">
+          <div class="logo">
+              <img src="assets\images\logo.png" alt="">
+          </div>
 
-  <button (click) = "showData()" class = "btn btn-info"> show Data </button>
-  
-</div>
+      </div>
+              
+      <div class="welcome-text">
+        <h1>View Your History</h1>
+
+        <button (click) = "showData()" class = "btn btn-info"> show Data </button>
+        
+      </div>
+  </header>
+</body>
+<div>
+
