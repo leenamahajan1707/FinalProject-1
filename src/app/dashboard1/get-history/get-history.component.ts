@@ -60,6 +60,8 @@ export class GetHistoryComponent implements OnInit {
     console.log("id = "+this.id);
     this.history = new History();
     this.historyService.getHistoryById(this.id).subscribe( data => {
+      console.log("data = ");
+      console.log(data);
       this.history = data;
     });
   }

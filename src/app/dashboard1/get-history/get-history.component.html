@@ -74,13 +74,13 @@
   </nav>
   
   
-  <div class="container p-2 m-7" style="margin-top: 7px;">
+  <!-- <div class="container p-2 m-7" style="margin-top: 7px;">
 
       <h2> View patient History</h2>
       <table style="width:100%">
         <tr>
            <th> <b> First Name : </b></th> 
-           <td>{{ history.pname }}</td>
+           <td>{{history.pname}}</td>
         </tr>
         <tr>
             <th> <b> Last Name : </b></th>
@@ -90,13 +90,13 @@
             <th> <b> Age : </b> </th>
             <td>{{history.age}}</td>
         </tr>
-      <tr>
+        <tr>
           <th> <b> mobile : </b></th> 
           <td>{{history.mob_no}}</td>
-     </tr>
-     <tr>
-         <th> <b> Date visited to Hospital : </b></th> 
-         <td>{{history.date_visited}}</td>
+        </tr>
+        <tr>
+            <th> <b> Date visited to Hospital : </b></th> 
+            <td>{{history.date_visited}}</td>
         </tr>
         <tr>
             <th> <b> reason for visit : </b></th> 
@@ -109,10 +109,10 @@
         <tr>
             <th> <b> medicine_Prescribed : </b></th> 
             <td>{{history.medicine_Prescribed}}</td>
-      </tr>
-      <tr>
-          <th> <b> allergy_if_any : </b></th>
-          <td>{{history.allergy_if_any}}</td>
+        </tr>
+        <tr>
+            <th> <b> allergy_if_any : </b></th>
+            <td>{{history.allergy_if_any}}</td>
         </tr>
         <tr>
             <th> <b> is_admitted : </b></th>
@@ -122,9 +122,9 @@
             <th> <b> date_of_admitted : </b></th> 
             <td>{{history.date_of_admitted}}</td>
         </tr>
-      <tr>
-          <th> <b> date_of_released : </b></th> 
-          <td>{{history.date_of_released}}</td>
+        <tr>
+            <th> <b> date_of_released : </b></th> 
+            <td>{{history.date_of_released}}</td>
         </tr>
         <tr>
             <th> <b> test_Done : </b></th> 
@@ -135,8 +135,65 @@
             <td>{{history.hosp_name}}</td>
         </tr>
     </table>
+  </div> -->
+
+    <div class="container-fluid " style="margin-top: 7vh;">
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th> <b> First Name  </b></th> 
+                <th> <b> Last Name  </b></th>
+                <th> <b> Age  </b> </th>
+                <th> <b> mobile  </b></th> 
+                <th> <b> Date visited to Hospital  </b></th>
+                <th> <b> reason for visit  </b></th> 
+                <th> <b> symptoms  </b></th> 
+                <th> <b> medicine_Prescribed  </b></th>
+                <th> <b> allergy_if_any  </b></th>
+                    
+                <th> <b> is_admitted  </b></th>
+                       
+                <th> <b> date_of_admitted  </b></th> 
+                 
+                <th> <b> date_of_released  </b></th> 
+                 
+                <th> <b> test_Done  </b></th> 
+                        
+                <th> <b> hosp_name  </b></th>  
+            </tr>             
+        </thead>
+        <tbody>
+            <tr *ngFor = "let data of history" >
+                <td>{{ data.pname }}</td>
+       
+                <td>{{data.psurname}}</td>
+                      
+                <td>{{data.age}}</td>
+                     
+                <td>{{data.mob_no}}</td>
+                        
+                <td>{{data.date_visited}}</td>
+                  
+                <td>{{data.reason_for_visit}}</td>
+                <td>{{data.symptoms}}</td>
+                      
+                <td>{{data.medicine_Prescribed}}</td>
+                <td>{{data.allergy_if_any}}</td>
+                
+                <td>{{data.is_admitted}}</td>
+                   
+                <td>{{data.date_of_admitted}}</td>
+                <td>{{data.date_of_released}}</td>
+                <td>{{data.test_Done}}</td>
+                     
+                <td>{{data.hosp_name}}</td>                     
+            </tr>
+        </tbody>
+    </table>
+
     
 </div>
+
 <nav class="navbar  fixed-bottom navbar-expand-lg navbar-dark  fixed-bottom" style="background-color: #101213;">
     <div class="navbar-expand m-auto navbar-text">
       Medicaid App Developed by Team-28 @CDAC MUMBAI

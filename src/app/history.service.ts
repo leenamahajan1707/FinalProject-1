@@ -16,6 +16,26 @@ export class HistoryService {
 
   constructor(private httpClient: HttpClient) { }
 
+  
+  saveHistory(history: History): Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, history);
+  }
+  
+  getHistoryById(patient_id: number): Observable<History>{
+    return this.httpClient.get<History>(`${this.baseURL}/${patient_id}`);
+  }
+  
+  getPatientList(name: String): Observable<Patient>{
+    return this.httpClient.get<Patient>(`${this.searchURL}/${name}`);
+    
+  }
+  
+  private url ="http://localhost:8080/getPatient";
+  getPatientById(patient_id: number): Observable<Patient>{
+    return this.httpClient.get<Patient>(`${this.url}/${patient_id}`);
+    
+  }
+  
   // getHistoryList(): Observable<History[]>
   // {
   //   return this.httpClient.get<History[]>(`${this.baseURL}`);
@@ -36,25 +56,6 @@ export class HistoryService {
   // public saveHistory(history){
   //   return this.httpClient.post("http://localhost:8080/api/v1/history",history,{responseType:'text' as 'json'});
   // }
-
-  saveHistory(history: History): Observable<Object>{
-    return this.httpClient.post(`${this.baseURL}`, history);
-  }
-
-  getHistoryById(id: number): Observable<History>{
-    return this.httpClient.get<History>(`${this.baseURL}/${id}`);
-  }
-
-  getPatientList(name: String): Observable<Patient>{
-    return this.httpClient.get<Patient>(`${this.searchURL}/${name}`);
-        
-  }
-
-  private url ="http://localhost:8080/getPatient";
-  getPatientById(patient_id: number): Observable<Patient>{
-    return this.httpClient.get<Patient>(`${this.url}/${patient_id}`);
-        
-  }
   // getPatientList(name: String,surname: String ,mob: String): Observable<Patient>{
   //   return this.httpClient.get<Patient>(`${this.searchURL}/${name}/${surname}/${mob}`);
         
