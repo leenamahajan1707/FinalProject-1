@@ -1,16 +1,15 @@
 
-<nav class="navbar  fixed-top navbar-expand-lg navbar-dark  bg-dark  fixed-top">
+<nav class="navbar  fixed-top navbar-expand-lg navbar-dark  fixed-top" style="background-color: #191b1b;">
     <div class="container">
-      <a class="navbar-brand active text-warning">Smart Coginitive Medicaid System </a>
-      <button (click)="toggleNav()" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand text-warning" [routerLink]="['/dashboard1']" routerLinkActive="router-link-active" >Smart Coginitive Medicaid System </a>
+      <button (click)="toggleNav()" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse p-3" id="navbarResponsive" [ngClass]="{'show': navToggle}">
+      <div class="collapse navbar-collapse p-3 " id="navbarResponsive" [ngClass]="{'show': navToggle}">
           <ul class="navbar-nav ml-auto">
-           
-              <li class="nav-item">
-               
-                  <a href="javascript:void(0)" class="nav-link active" (click)="logout()">Logout</a>
+              <li class="nav-item active"> 
+                  <a href="javascript:void(0)" class="nav-link" (click)="logout()">Logout</a>
               </li>
             </ul>
       </div>
@@ -27,10 +26,8 @@
         </div>
             <div class="welcome-text">
                 <h1>Manage Patient History</h1>
-               
-    <button (click) = "add()" class = "btn btn-outline-primary btn-lg "> Add </button>
-    <button (click) = "selectPatient()" class = "btn btn-outline-primary btn-lg"> View </button>
-              
+                <a (click) = "add()" class="btn btn-outline-info btn-lg" role="button">Add</a>
+                <a (click) = "selectPatient()" class = "btn btn-outline-info btn-lg"> View </a>  
             </div>
     </header>
 </body>

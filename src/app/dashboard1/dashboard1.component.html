@@ -1,5 +1,5 @@
 
-<nav class="navbar  fixed-top navbar-expand-lg navbar-dark bg-dark  fixed-top">
+<nav class="navbar  fixed-top navbar-expand-lg navbar-dark  fixed-top" style="background-color: #101213;">
   <div class="container">
     <a class="navbar-brand text-warning">Smart Coginitive Medicaid System </a>
     <button (click)="toggleNav()" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,8 +8,8 @@
     <div class="collapse navbar-collapse" id="navbarResponsive" [ngClass]="{'show': navToggle}">
         <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item">
-                <a href="javascript:void(0)" class="nav-link active" (click)="logout()">Logout</a>
+            <li class="nav-item active">
+                <a href="javascript:void(0)" class="nav-link" (click)="logout()">Logout</a>
             </li>
           </ul>
     </div>
@@ -87,5 +87,10 @@
 
 
 
+<nav class="navbar  fixed-bottom navbar-expand-lg navbar-dark  fixed-bottom" style="background-color: #101213;">
+  <div class="navbar-expand m-auto navbar-text">
+    Medicaid App Developed by Team-28 @CDAC MUMBAI
+  </div>
+</nav>
 
 
