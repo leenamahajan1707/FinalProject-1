@@ -24,13 +24,17 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="row justify-content-center">
-                      <div class="col-md-8">
-                          <div class="card">
-                              <div class="card-header">Register</div>
-                              <div class="card-body">
-      <h3>Register Patient</h3>
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="col-md-6 d-none d-md-flex bg-image"></div>
+    <div class="col-md-6 bg-light">
+      <div class="login d-flex align-items-center py-8">
+
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-10 col-xl-7 mx-auto">
+                  <h3>Patient Register!</h3>
+  
       <form #f="ngForm"
             (ngSubmit)="onSubmit(f)">
             <div class="form-group">
