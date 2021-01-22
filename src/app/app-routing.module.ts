@@ -10,6 +10,7 @@ import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.compon
 import { GetHistoryComponent } from './dashboard1/get-history/get-history.component';
 import { HistoryComponent } from './dashboard1/history/history.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 // import { SearchComponent } from './dashboard1/search/search.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
@@ -25,7 +26,9 @@ const routes: Routes = [
   {path: 'get-history/:pid', component: GetHistoryComponent,canActivate:[AuthGaurdService]},
   {path: 'history/:patient_id', component: HistoryComponent,canActivate:[AuthGaurdService]},
   {path: 'about', component: AboutComponent},
-  { path: "**",component:HomepageComponent},
+  { path: "homepage",component:HomepageComponent},
+  {path: '**', component: ErrorPageComponent},
+
 
 
 ];
