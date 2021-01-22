@@ -31,25 +31,40 @@ export class Dashboard1Component implements OnInit {
 
   public fbFormGroup = this.fb.group({
     pname: ['', Validators.required],
-	  psurname: ['', Validators.required] ,
-	  mob_no: ['', Validators.required],
+	  // psurname: ['', Validators.required] ,
+	  // mob_no: ['', Validators.required],
   });
 
   SearchPatient(){
     const info = this.fbFormGroup.value;
     let name= info.pname;
-    let surname = info.psurname;
-    let mob = info.mob_no;
+    // let surname = info.psurname;
+    // let mob = info.mob_no;
     console.log(name);
-    console.log(surname);
-    console.log(mob);
-    this.historyService.getPatientList(name,surname,mob).subscribe( data =>{
+    // console.log(surname);
+    // console.log(mob);
+    this.historyService.getPatientList(name).subscribe( data =>{
       console.log(data);
       this.patient = data;
       //this.goToHistory();
     },
     error => console.log(error));
   }
+  // SearchPatient(){
+  //   const info = this.fbFormGroup.value;
+  //   let name= info.pname;
+  //   let surname = info.psurname;
+  //   let mob = info.mob_no;
+  //   console.log(name);
+  //   console.log(surname);
+  //   console.log(mob);
+  //   this.historyService.getPatientList(name,surname,mob).subscribe( data =>{
+  //     console.log(data);
+  //     this.patient = data;
+  //     //this.goToHistory();
+  //   },
+  //   error => console.log(error));
+  // }
 
   // goToHistory(){
   //   this.router.navigate(['/searchHistory']);

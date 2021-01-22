@@ -19,6 +19,8 @@ import { AboutComponent } from './about/about.component';
 import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from './service/authentication.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CounterParams, Styles } from '@fortawesome/fontawesome-svg-core';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { AuthenticationService } from './service/authentication.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
 exports: [RouterModule],
   providers: [AuthenticationService],

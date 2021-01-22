@@ -45,14 +45,14 @@ export class HistoryService {
     return this.httpClient.get<History>(`${this.baseURL}/${id}`);
   }
 
-  // getPatientList(name: String,surname: String ,mob: String): Observable<History>{
-  //   return this.httpClient.get<History>(`${this.searchURL}/${name}/${surname}/${mob}`);
-        
-  // }
-  getPatientList(name: String,surname: String ,mob: String): Observable<Patient>{
-    return this.httpClient.get<Patient>(`${this.searchURL}/${name}/${surname}/${mob}`);
+  getPatientList(name: String): Observable<Patient>{
+    return this.httpClient.get<Patient>(`${this.searchURL}/${name}`);
         
   }
+  // getPatientList(name: String,surname: String ,mob: String): Observable<Patient>{
+  //   return this.httpClient.get<Patient>(`${this.searchURL}/${name}/${surname}/${mob}`);
+        
+  // }
 
   
   // getHistoryByEmail(ema: number): Observable<History>{
