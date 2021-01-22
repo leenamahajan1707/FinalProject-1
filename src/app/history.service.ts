@@ -49,6 +49,12 @@ export class HistoryService {
     return this.httpClient.get<Patient>(`${this.searchURL}/${name}`);
         
   }
+
+  private url ="http://localhost:8080/getPatient";
+  getPatientById(patient_id: number): Observable<Patient>{
+    return this.httpClient.get<Patient>(`${this.url}/${patient_id}`);
+        
+  }
   // getPatientList(name: String,surname: String ,mob: String): Observable<Patient>{
   //   return this.httpClient.get<Patient>(`${this.searchURL}/${name}/${surname}/${mob}`);
         

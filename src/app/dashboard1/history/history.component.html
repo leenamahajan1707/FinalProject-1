@@ -32,20 +32,20 @@
                  <form  (ngSubmit) = "onSubmit()">
                     <div class="form-group">
                       <label for="pname">pname</label>
-                      <input type="text" class="form-control" id="pname"  placeholder="patient name"  [(ngModel)] ="history.pname" name ="pname">
+                      <input type="text" class="form-control" id="pname"  placeholder="patient name" [readonly]=true value={{patient.pname}}  [(ngModel)] ="history.pname" name ="pname">
                     </div>
                     <div class="form-group">
                       <label for="psurname">psurname</label>
-                      <input type="text" class="form-control" id="psurname"  placeholder="patient surname"  [(ngModel)] ="history.psurname" name ="psurname">
+                      <input type="text" class="form-control" id="psurname"  placeholder="patient surname" [readonly]=true value={{patient.psurname}}  [(ngModel)] ="history.psurname" name ="psurname">
                     </div>
 
                     <div class="form-group">
                       <label for="age">age</label>
-                      <input type="text" class="form-control" id="age"  placeholder="age"  [(ngModel)]="history.age" name ="age" >
+                      <input type="text" class="form-control" id="age"  placeholder="age" value={{patient.age}} [readonly]=true [(ngModel)]="history.age" name ="age" >
                     </div>
                     <div clsass="form-group">
                       <label for="mob_no">mob_no</label>
-                      <input type="text" class="form-control" id="mob_no" placeholder="mob_no"  [(ngModel)]="history.mob_no" name ="mob_no">
+                      <input type="text" class="form-control" id="mob_no" placeholder="mob_no" value={{patient.mob_no}} [readonly]=true [(ngModel)]="history.mob_no" name ="mob_no">
                     </div>
 
 
