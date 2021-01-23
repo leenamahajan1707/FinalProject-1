@@ -29,83 +29,89 @@
 
                 </div>
                 <p class="login-card-description"></p>
-                 <form  (ngSubmit) = "onSubmit()">
+                <form #f="ngForm"
+                (ngSubmit)="onSubmit(f)">
                     <div class="form-group">
                       <label for="pname">pname</label>
-                      <input type="text" class="form-control" id="pname"  placeholder="patient name" [readonly]=true value={{patient.pname}}  [(ngModel)] ="history.pname" name ="pname">
+                      <input type="text" class="form-control" id="pname"  placeholder="patient name" [readonly]=true value={{patient.pname}}  [(ngModel)] ="history.pname"
+                       name ="pname"  
+                       ngModel required #pname="ngModel">
                     </div>
                     <div class="form-group">
                       <label for="psurname">psurname</label>
-                      <input type="text" class="form-control" id="psurname"  placeholder="patient surname" [readonly]=true value={{patient.psurname}}  [(ngModel)] ="history.psurname" name ="psurname">
+                      <input type="text" class="form-control" id="psurname"  ngModel required #psurname="ngModel" placeholder="patient surname" [readonly]=true value={{patient.psurname}}  [(ngModel)] ="history.psurname" name ="psurname">
                     </div>
 
                     <div class="form-group">
                       <label for="age">age</label>
-                      <input type="text" class="form-control" id="age"  placeholder="age" value={{patient.age}} [readonly]=true [(ngModel)]="history.age" name ="age" >
+                      <input type="text" class="form-control" id="age"  ngModel required #age="ngModel" placeholder="age" value={{patient.age}} [readonly]=true [(ngModel)]="history.age" name ="age" >
                     </div>
                     <div clsass="form-group">
                       <label for="mob_no">mob_no</label>
-                      <input type="text" class="form-control" id="mob_no" placeholder="mob_no" value={{patient.mob_no}} [readonly]=true [(ngModel)]="history.mob_no" name ="mob_no">
+                      <input type="text" class="form-control" id="mob_no"  ngModel required #mob_no="ngModel" placeholder="mob_no" value={{patient.mob_no}} [readonly]=true [(ngModel)]="history.mob_no" name ="mob_no">
                     </div>
 
 
                     <div class="form-group">
                       <label for="date_visited">date_visited</label>
-                      <input type="text" class="form-control" id="date_visited"  placeholder="date_visited"  [(ngModel)]="history.date_visited" name ="date_visited" >
+                      <input type="text" class="form-control" id="date_visited"  ngModel required #date_visited="ngModel" placeholder="date_visited"  [(ngModel)]="history.date_visited" name ="date_visited" >
                     </div>
                     <div class="form-group">
                       <label for="reason_for_visit">reason_for_visit</label>
-                      <input type="text" class="form-control" id="reason_for_visit" placeholder="reason_for_visit"  [(ngModel)]="history.reason_for_visit" name ="reason_for_visit" >
+                      <input type="text" class="form-control" id="reason_for_visit"  ngModel required #reason_for_visit="ngModel" placeholder="reason_for_visit"  [(ngModel)]="history.reason_for_visit" name ="reason_for_visit" >
                     </div>
 
                     <div class="form-group">
                       <label for="symptoms">symptoms</label>
-                      <input type="text" class="form-control" id="symptoms" placeholder="symptoms"  [(ngModel)]="history.symptoms" name ="symptoms">
+                      <input type="text" class="form-control" id="symptoms"  ngModel required #symptoms="ngModel" placeholder="symptoms"  [(ngModel)]="history.symptoms" name ="symptoms">
                     </div>
 
                     <div class="form-group">
                       <label for="medicine_Prescribed">medicine_Prescribed</label>
-                      <input type="text" class="form-control" id="medicine_Prescribed" placeholder="medicine_Prescribed"  [(ngModel)]="history.medicine_Prescribed" name ="medicine_Prescribed" >
+                      <input type="text" class="form-control" id="medicine_Prescribed"  ngModel required #medicine_Prescribed="ngModel" placeholder="medicine_Prescribed"  [(ngModel)]="history.medicine_Prescribed" name ="medicine_Prescribed" >
                     </div>
                     <div class="form-group">
                       <label for="allergy_if_any">allergy_if_any</label>
-                      <input type="text" class="form-control" id="allergy_if_any" placeholder="allergy_if_any"  [(ngModel)]="history.allergy_if_any" name ="allergy_if_any">
+                      <input type="text" class="form-control" id="allergy_if_any"  ngModel required #allergy_if_any="ngModel" placeholder="allergy_if_any"  [(ngModel)]="history.allergy_if_any" name ="allergy_if_any">
                     </div>
                     <div class="form-group">
                       <label for="is_admitted">is_admitted</label>
-                      <input type="text" class="form-control" id="is_admitted" placeholder="is_admitted"  [(ngModel)]="history.is_admitted" name ="is_admitted">
+                      <input type="text" class="form-control" id="is_admitted"  ngModel required #is_admitted="ngModel" placeholder="is_admitted"  [(ngModel)]="history.is_admitted" name ="is_admitted">
                     </div>
 
                     <div class="form-group">
                       <label for="date_of_admitted">date_of_admitted</label>
-                      <input type="text" class="form-control" id="date_of_admitted" placeholder="date_of_admitted"  [(ngModel)]="history.date_of_admitted" name ="date_of_admitted">
+                      <input type="text" class="form-control" id="date_of_admitted"  ngModel required #date_of_admitted="ngModel" placeholder="date_of_admitted"  [(ngModel)]="history.date_of_admitted" name ="date_of_admitted">
                     </div>
                       <div class="form-group">
                       <label for="date_of_released">date_of_released</label>
-                      <input type="text" class="form-control" id="date_of_released" placeholder="date_of_released"  [(ngModel)]="history.date_of_released" name ="date_of_released" >
+                      <input type="text" class="form-control" id="date_of_released"  ngModel required #date_of_released="ngModel" placeholder="date_of_released"  [(ngModel)]="history.date_of_released" name ="date_of_released" >
                     </div>
                     <div class="form-group">
                       <label for="test_Done">test_Done</label>
-                      <input type="text" class="form-control" id="test_Done" placeholder="test_Done"  [(ngModel)]="history.test_Done" name ="test_Done">
+                      <input type="text" class="form-control" id="test_Done"  ngModel required #test_Done="ngModel" placeholder="test_Done"  [(ngModel)]="history.test_Done" name ="test_Done">
                     </div>
                     <div class="form-group">
                       <label for="hosp_name">hosp_name</label>
-                      <input type="text" class="form-control" id="hosp_name" placeholder="hosp_name"  [(ngModel)]="history.hosp_name" name ="hosp_name">
+                      <input type="text" class="form-control" id="hosp_name"  ngModel required #hosp_name="ngModel" placeholder="hosp_name"  [(ngModel)]="history.hosp_name" name ="hosp_name">
                     </div>
                       <div class="form-group">
                       <label for="doctor_Name">doctor_Name</label>
-                      <input type="text" class="form-control" id="doctor_Name" placeholder="doctor_Name"  [(ngModel)]="history.doctor_Name" name ="doctor_Name">
+                      <input type="text" class="form-control" id="doctor_Name"  ngModel required #doctor_Name="ngModel" placeholder="doctor_Name"  [(ngModel)]="history.doctor_Name" name ="doctor_Name">
                     </div>
                     <div class="form-group">
                       <label for="doctor_Designation">doctor_Designation</label>
-                      <input type="text" class="form-control" id="doctor_Designation" placeholder="doctor_Designation"  [(ngModel)]="history.doctor_Designation" name ="doctor_Designation" >
+                      <input type="text" class="form-control" id="doctor_Designation"  ngModel required #doctor_Designation="ngModel" placeholder="doctor_Designation"  [(ngModel)]="history.doctor_Designation" name ="doctor_Designation" >
                     </div>
                     <div class="form-group">
                       <label for="hosp_address">hosp_address</label>
-                      <input type="text" class="form-control" id="hosp_address" placeholder="hosp_address"  [(ngModel)]="history.hosp_address" name ="hosp_address" >
+                      <input type="text" class="form-control" id="hosp_address"  ngModel required #hosp_address="ngModel" placeholder="hosp_address"  [(ngModel)]="history.hosp_address" name ="hosp_address" >
                     </div>
         
-                    <button type="submit" class="btn btn-primary">Add Data</button>
+                    <button type="submit" [disabled]="f.invalid"
+                  [disabled]="f.invalid"
+                  class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Add Data</button>
+
                 </form>
               </div>
             </div>

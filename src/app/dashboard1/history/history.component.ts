@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Patient } from 'src/app/patient';
 import { AuthenticationService } from 'src/app/service/authentication.service';
@@ -64,7 +65,7 @@ export class HistoryComponent implements OnInit {
     this.router.navigate(['/dashboard1']);
   }
 
-  onSubmit(){
+  onSubmit(f: NgForm){
     console.log(this.history);
     this.addHistory();
   }
