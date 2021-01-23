@@ -17,7 +17,73 @@
 </nav>
 
 
-<div class="row">
+<div class="d-md-flex h-md-100 align-items-center">
+
+  <!-- First Half -->
+  
+  <div class="col-md-6 p-0 bg-indigo h-md-100 " style="height: 100vh; background-color: #3b7a6b;">
+      <div class="text-white d-md-flex align-items-center h-100 p-3 text-center justify-content-center">
+        <div [formGroup]="fbFormGroup" >
+          <div class="form-group">
+          <label for="pname"><h1><b>Search</b></h1></label>
+          <input type="text" class="form-control" id="pname"  placeholder="Search patient by Name or Surname or both "   formControlName="pname" name ="pname">
+         
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="SearchPatient()" >Search Patient</button>
+      </div>
+      </div>
+  </div>
+  
+  <!-- Second Half -->
+  
+  <div class="col-md-6 p-0 bg-white h-md-100 loginarea bg-warning"  style="height: 100vh;">
+   
+      <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
+        
+        <div class="row mt-5">
+          <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th> First Name</th>
+                    <th> Last Name </th>
+                    <th> Mobile No </th>
+                    <th> Email </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let data of patient" >
+                  
+                    <td> {{ data.pname }} </td>
+                    <td> {{ data.psurname }} </td>
+                    <td> {{ data.mob_no }} </td>
+                    <td> {{ data.emailId }} </td>
+                    <td>
+                        <button (click) = "select(data.patient_id)" class = "btn btn-info"> select</button>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+  </div>
+      
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+ <div class="row">
   <div class= "col-md-8 offset-md-md-3 mt-4">
     <div class="container">
       <div class="card login-card">
@@ -38,16 +104,7 @@
                      
                     </div>
 
-                      <!-- <div class="form-group">
-                      <label for="psurname">psurname</label>
-                      <input type="text" class="form-control" id="psurname"  placeholder="patient surname"   formControlName="psurname" name ="psurname">
-                      </div>
-                  
-                      
-                      <div clsass="form-group">
-                      <label for="mob_no">mob_no</label>
-                      <input type="text" class="form-control" id="mob_no" placeholder="mob_no"   formControlName="mob_no" name ="mob_no">
-                      </div> -->
+                     
 
                       <button type="submit" class="btn btn-primary" (click)="SearchPatient()" >Search Patient</button>
                   </div>
@@ -64,7 +121,7 @@
                       </thead>
                       <tbody>
                           <tr *ngFor = "let data of patient" >
-                               <!-- <td> {{ data.patient_id }} </td>  -->
+                            
                               <td> {{ data.pname }} </td>
                               <td> {{ data.psurname }} </td>
                               <td> {{ data.mob_no }} </td>
@@ -83,7 +140,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>  -->
 
 
 <nav class="navbar  mt-5 p-3 fixed-bottom navbar-expand-lg navbar-dark  fixed-bottom" style="background-color: #141414;">
