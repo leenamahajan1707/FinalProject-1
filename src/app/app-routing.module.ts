@@ -12,6 +12,7 @@ import { HistoryComponent } from './dashboard1/history/history.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 // import { SearchComponent } from './dashboard1/search/search.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { OtpComponent } from './otp/otp.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: "doctor-view/:patient_id",component:DoctorViewComponent,canActivate:[AuthGaurdService]},
   {path: 'get-history/:pid', component: GetHistoryComponent,canActivate:[AuthGaurdService]},
   {path: 'history/:patient_id', component: HistoryComponent,canActivate:[AuthGaurdService]},
+  {path: 'otp/:emailId', component: OtpComponent},
   {path: 'about', component: AboutComponent},
   { path: "**",component:HomepageComponent},
 

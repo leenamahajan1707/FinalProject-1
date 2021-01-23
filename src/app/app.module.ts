@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from './service/authentication.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CounterParams, Styles } from '@fortawesome/fontawesome-svg-core';
+import { OtpComponent } from './otp/otp.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CounterParams, Styles } from '@fortawesome/fontawesome-svg-core';
     LogoutComponent,
     ErrorPageComponent,
     AboutComponent,
-    DoctorViewComponent
+    DoctorViewComponent,
+    OtpComponent
 
 
   ],

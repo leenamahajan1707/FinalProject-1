@@ -53,11 +53,17 @@ export class RegistrationService {
     return this.http.post<any>("http://localhost:8080/registerDoctor", doctor)
   }
 
-  // private baseurl = "http://localhost:8080/user_list";
-  // public getUsersList(): Observable<Patient[]> {
+  private updateUrl ="http://localhost:8080/updatePassword"
+  public updatePassword(emailId,password,otp): Observable<any> {
+    console.log("otp in sevice "+otp);
+    return this.http.get<any>(`${this.updateUrl}/${emailId}/${password}/${otp}`);
+  }
 
-  //   return this.http.get<Patient[]>(`${this.baseurl}`);
-  // }
+  private baseurl2 = "http://localhost:8080/sendmail";
+  public sendEmail(emailId): Observable<any> {
+    console.log(emailId);
+    return this.http.get<any>(`${this.baseurl2}/${emailId}`);
+  }
 
   // private baseurl1 = "http://localhost:8080/del_user";
 
