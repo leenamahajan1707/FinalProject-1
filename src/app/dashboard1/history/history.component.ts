@@ -48,12 +48,6 @@ export class HistoryComponent implements OnInit {
     // this.patient_id = this.route.snapshot.params['patient_id'];
     // console.log(this.patient_id);
 
-    this.history.pname = this.patient.pname;
-    this.history.psurname = this.patient.psurname;
-    this.history.age = this.patient.age;
-    this.history.mob_no = this.patient.mob_no;
-
-
     this.historyService.saveHistory(this.history).subscribe( data =>{
       console.log(data);
       this.goToDoctorView();
@@ -66,8 +60,16 @@ export class HistoryComponent implements OnInit {
   }
 
   onSubmit(f: NgForm){
+    this.history.pname = this.patient.pname;
+    this.history.psurname = this.patient.psurname;
+    this.history.age = this.patient.age;
+    this.history.mob_no = this.patient.mob_no;
+
     console.log(this.history);
-    this.addHistory();
+    if(history != null || history != undefined )
+      {
+        this.addHistory();
+      }
   }
 
   logout(){

@@ -58,11 +58,24 @@ export class RegistrationService {
     console.log("otp in sevice "+otp);
     return this.http.get<any>(`${this.updateUrl}/${emailId}/${password}/${otp}`);
   }
-
+//for forgot password
   private baseurl2 = "http://localhost:8080/sendmail";
   public sendEmail(emailId): Observable<any> {
     console.log(emailId);
     return this.http.get<any>(`${this.baseurl2}/${emailId}`);
+  }
+
+//for validating patient otp
+  private baseurl3 = "http://localhost:8080/sendotpmail";
+  public sendOtpEmail(emailId): Observable<any> {
+    console.log(emailId);
+    return this.http.get<any>(`${this.baseurl3}/${emailId}`);
+  }
+
+  private validateOtpUrl = "http://localhost:8080/validateOtp";
+  public validateOtp(emailId,otp): Observable<any> {
+    console.log("otp in sevice "+otp);
+    return this.http.get<any>(`${this.validateOtpUrl}/${emailId}/${otp}`);
   }
 
   // private baseurl1 = "http://localhost:8080/del_user";

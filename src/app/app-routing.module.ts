@@ -9,6 +9,7 @@ import { Dashboard1Component } from './dashboard1/dashboard1.component';
 import { DoctorViewComponent } from './dashboard1/doctor-view/doctor-view.component';
 import { GetHistoryComponent } from './dashboard1/get-history/get-history.component';
 import { HistoryComponent } from './dashboard1/history/history.component';
+import { ValidateOtpComponent } from './dashboard1/validate-otp/validate-otp.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 // import { SearchComponent } from './dashboard1/search/search.component';
@@ -17,6 +18,7 @@ import { OtpComponent } from './otp/otp.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 
 const routes: Routes = [
+  { path: ' ',component: HomepageComponent},
   { path: "login",component: LoginComponent},
   { path: "register",component: RegisterComponent},
   { path: "registerp",component: RegisterpComponent},
@@ -27,6 +29,7 @@ const routes: Routes = [
   {path: 'get-history/:pid', component: GetHistoryComponent,canActivate:[AuthGaurdService]},
   {path: 'history/:patient_id', component: HistoryComponent,canActivate:[AuthGaurdService]},
   {path: 'otp/:emailId', component: OtpComponent},
+  {path: 'valOtp/:patient_id/:emailId', component: ValidateOtpComponent},
   {path: 'about', component: AboutComponent},
   { path: "homepage",component:HomepageComponent},
   {path: '**', component: ErrorPageComponent},

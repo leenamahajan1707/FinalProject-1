@@ -22,6 +22,7 @@ import { AuthenticationService } from './service/authentication.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CounterParams, Styles } from '@fortawesome/fontawesome-svg-core';
 import { OtpComponent } from './otp/otp.component';
+import { ValidateOtpComponent } from './dashboard1/validate-otp/validate-otp.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { OtpComponent } from './otp/otp.component';
     ErrorPageComponent,
     AboutComponent,
     DoctorViewComponent,
-    OtpComponent
+    OtpComponent,
+    ValidateOtpComponent
 
 
   ],

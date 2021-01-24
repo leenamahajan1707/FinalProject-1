@@ -1,0 +1,15 @@
+<form #f="ngForm"
+    (ngSubmit)="onSubmit(f)" >
+
+  
+    <div class="form-group">
+      <input type="text" class="form-control" id="otp"  placeholder="Enter Otp " [(ngModel)]="otp"   name ="otp">
+    </div>
+    <strong style="color: red;">{{msg}}</strong>
+    
+    <button type="submit" [disabled]="f.invalid"
+    [disabled]="f.invalid"
+    class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">submit <i class="fas fa-sign-in-alt"></i></button>
+
+  
+</form>
